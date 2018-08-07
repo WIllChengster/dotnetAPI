@@ -7,6 +7,13 @@ using System.Web.Http;
 using APWebGrabberActiveXControlLib;
 namespace consoleApi
 {
+
+    public class Setting
+    {
+        public bool Linearize { get; set; }
+        public string DocName { get; set; }
+    }
+
     public class WgController : ApiController
     {
         //Get api/wg
@@ -21,6 +28,17 @@ namespace consoleApi
 
             return new string[] { "Hello", "World" };
         }
+        
+        
+
+        //Post
+        [HttpPost]
+        public void Post([FromBody] Setting opt)
+        {
+            Console.WriteLine(opt.Linearize);
+
+        }
+
     }
     
 }
