@@ -41,6 +41,7 @@ namespace consoleApi
 
                 while (reader.Read())
                 {
+                    Console.WriteLine("\nDatabase value for HTML is: " + reader[0].ToString());
                     HTML = reader[0].ToString();
                 }
                 connection.Close();
@@ -53,6 +54,8 @@ namespace consoleApi
 
                 while (reader.Read())
                 {
+                    Console.WriteLine("Database value for the new Document Name is: " + reader[0].ToString());
+
                     DocName = reader[0].ToString();
                 }
                 Console.WriteLine(HTML + DocName);
@@ -60,14 +63,17 @@ namespace consoleApi
                 connection.Close();
             };
 
+            Console.WriteLine("\nPreparing to Convert Website: " + HTML);
+            Console.WriteLine("New Document Name will be named: " + DocName);
+
             APWebGrabber wg = new APWebGrabber();
 
             wg.OutputDirectory = @"C:/Users/Administrator/Desktop";
             wg.NewDocumentName = DocName;
             wg.URL = HTML;
             wg.ConvertToPDF("127.0.0.1", 52525);
-
-            return new string[] { "Hello", "World" };
+            Console.WriteLine("\nDone!");
+            return new string[] {};
         }
         
         
@@ -76,8 +82,8 @@ namespace consoleApi
         [HttpPost]
         public void Post([FromBody] Setting opt)
         {
-            Console.WriteLine(opt.DocName);
-            Console.WriteLine(opt.HTML);
+            Console.WriteLine("\nUser named the new Document as: "+ opt.DocName);
+            Console.WriteLine("User sent the website to covert: "+ opt.HTML);
 
             Properties.Settings S = new Properties.Settings();
 
@@ -91,14 +97,18 @@ namespace consoleApi
 
                 SqlCommand Command = new SqlCommand("UPDATE Settings SET NewDocName = @DocName WHERE Id = 1", connection);
 
-                SqlParameter param = new SqlParameter(
+                SqlParameter param1 = new SqlParameter(
                     "@DocName", System.Data.SqlDbType.NVarChar, 16);
-                param.Value = opt.DocName;
-                Command.Parameters.Add(param);
-
+                param1.Value = opt.DocName;
+                Command.Parameters.Add(param1);
                 Command.ExecuteNonQuery();
 
-
+                Command.CommandText = "UPDATE Settings SET HTML = @NewHTML WHERE Id = 1";
+                SqlParameter param2 = new SqlParameter(
+                    "@NewHTML", System.Data.SqlDbType.NVarChar);
+                param2.Value = opt.HTML;
+                Command.Parameters.Add(param2);
+                Command.ExecuteNonQuery();
 
                 connection.Close();
             };
