@@ -29,3 +29,13 @@ C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleA
 C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleApi\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
 C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleApi\bin\Debug\Microsoft.Owin.Hosting.xml
 C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleApi\bin\Debug\System.Web.Http.Owin.xml
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleApi\bin\Debug\DnsClient.dll
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleApi\bin\Debug\System.Buffers.dll
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleApi\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleApi\bin\Debug\DnsClient.xml
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleApi\bin\Debug\Database2.mdf
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleApi\bin\Debug\Database2_log.ldf
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleApi\bin\Debug\Database2DataSet.Designer.cs
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleApi\bin\Debug\Database2DataSet.xsc
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleApi\bin\Debug\Database2DataSet.xsd
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\consoleApi\consoleApi\bin\Debug\Database2DataSet.xss

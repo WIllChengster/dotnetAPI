@@ -4,20 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Owin.Hosting;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace consoleApi
 {
+
+
     class Program
     {
 
         static void Main(string[] args)
         {
+
+
+
+
             using (WebApp.Start<Startup>("http://localhost:8080"))
             {
                 Console.WriteLine("WebServer is running");
-                Console.WriteLine("Press any key to quit");
+                Console.WriteLine("Press ENTER to quit");
                 Console.ReadLine();
             }
         }
+
+
+
     }
+    
 }
